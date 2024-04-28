@@ -32,7 +32,7 @@ function submitHandler(event) {
     formData.email = '';
     formData.message = '';
 
-    feedbackForm.reset();
+    refs.feedbackForm.reset();
 }
 
 if (localStorage.getItem(LOCAL_STORAGE_KEY) !== null) {
