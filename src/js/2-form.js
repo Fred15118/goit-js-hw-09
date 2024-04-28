@@ -14,8 +14,10 @@ refs.feedbackForm.addEventListener('submit', submitHandler)
 refs.feedbackForm.addEventListener('input', inputHandler)
 
 function inputHandler(event) {
-    formData.email = refs.userEmail.value.trim();
-    formData.message = refs.userMessage.value.trim();
+    const changedInputName = event.target.name;
+    const newValue = event.target.value;
+
+    formData[changedInputName] = newValue;
 
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(formData))
 }
@@ -23,9 +25,13 @@ function inputHandler(event) {
 function submitHandler(event) {
     event.preventDefault();
 
-    if (!refs.userEmail.value || !refs.userMessage.value) {
+    formData.email = formData.email?.trim();
+    formData.message = formData.message?.trim();
+
+    if (!formData.email || !formData.message) {
         return alert('Fill please all fields');
     }
+    console.log(formData);
 
     localStorage.removeItem(LOCAL_STORAGE_KEY);
 
