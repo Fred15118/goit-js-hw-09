@@ -1,0 +1,14 @@
+.link{
+    padding: 8px 16px;
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 8px;
+}
+
+.list{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 300px;
+    gap: 8px;
+}
